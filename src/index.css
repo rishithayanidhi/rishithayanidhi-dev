@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 @import "tailwindcss";
 
+
 /* Subtle shimmer glow on hover */
 .group:hover .glow-effect {
   animation: shimmer 1.5s infinite linear;

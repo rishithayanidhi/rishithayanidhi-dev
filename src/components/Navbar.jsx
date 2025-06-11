@@ -14,7 +14,7 @@ export default function Navbar() {
           to="/"
           className="text-lg font-semibold tracking-wide font-[Ubuntu] hover:overline text-yellow-300 transition duration-300 hover:scale-105"
         >
-          RISHI THAYANIDHI
+          RISHI
         </Link>
 
         {/* Center: Desktop Nav Links (including Contact) */}
