@@ -1,86 +1,60 @@
-// import { Link } from "react-router-dom";
-
-// export default function Navbar() {
-//   return (
-//     <nav className="fixed top-0 w-full bg-white shadow-2xl z-50">
-//       <div className="container mx-auto px-8 py-4 flex justify-between items-center">
-        
-//         {/* Navbar Title - redirects to homepage */}
-//         <Link to="/" className="cursor-pointer hover:text-orange-500 transition duration-300 text-lg font-semibold tracking-wide font-[Ubuntu]">
-//           Rishi T.
-//         </Link>
-
-//         {/* Centered Navbar Links */}
-//         <ul className="flex space-x-6 text-black font-medium text-base font-[Ubuntu] ml-auto mr-auto">
-//           {["About", "Skills", "Education", "Projects", "Experience"].map((item, index) => (
-//             <li key={index}>
-//               <Link
-//                 to={`/${item.toLowerCase()}`}
-//                 className="hover:text-orange-500 transition duration-300"
-//               >
-//                 {item}.
-//               </Link>
-//             </li>
-//           ))}
-//         </ul>
-
-//         {/* Contact aligned right */}
-//         <Link
-//           to="/contact"
-//           className="text-black font-medium text-base font-[Ubuntu] hover:text-orange-500 transition duration-300"
-//         >
-//           Contact.
-//         </Link>
-//       </div>
-//     </nav>
-//   );
-// }
-
-
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Lucide icons for hamburger and close
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const navItems = ["About", "Skills", "Education", "Projects", "Experience"];
 
   return (
-    <nav className="fixed top-0 w-full bg-white shadow-2xl z-50">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-
-        {/* Logo */}
-        <Link to="/" className="text-lg font-semibold tracking-wide font-[Ubuntu] hover:text-orange-500 transition duration-300">
-          Rishi T.
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0F172A] shadow-2xl text-white">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">
+        {/* Left: Logo */}
+        <Link
+          to="/"
+          className="text-lg font-semibold tracking-wide font-[Ubuntu] hover:overline text-yellow-300 transition duration-300 hover:scale-105"
+        >
+          RISHI THAYANIDHI
         </Link>
 
-        {/* Desktop Nav Links */}
-        <ul className="hidden md:flex space-x-6 text-black font-medium text-base font-[Ubuntu]">
+        {/* Center: Desktop Nav Links (including Contact) */}
+        <ul className="hidden md:flex space-x-6 absolute left-1/2 -translate-x-1/2 font-medium font-[Ubuntu] text-base">
           {navItems.map((item, index) => (
             <li key={index}>
               <Link
                 to={`/${item.toLowerCase()}`}
-                className="hover:text-orange-500 transition duration-300"
+                className="hover:overline hover:text-yellow-300 transition duration-300 hover:scale-105 inline-block"
               >
                 {item}.
               </Link>
             </li>
           ))}
+          <li>
+            <Link
+              to="/contact"
+              className="hover:overline hover:text-yellow-300 transition duration-300 hover:scale-105 inline-block"
+            >
+              Contact.
+            </Link>
+          </li>
         </ul>
 
-        {/* Desktop Contact Button */}
-        <Link
-          to="/contact"
-          className="hidden md:block text-black font-medium text-base font-[Ubuntu] hover:text-orange-500 transition duration-300"
-        >
-          Contact.
-        </Link>
+        {/* Right: Resume Button (Desktop Only) */}
+        <div className="hidden md:block">
+          <a
+            href="https://drive.google.com/file/d/1qYjngEfL8uu8TsPyC1Z31lWZx6vthHmD/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 bg-yellow-400 text-black text-sm font-[Ubuntu] rounded-md transition-transform duration-300 ease-out hover:scale-105 hover:shadow-lg"
+            style={{ boxShadow: "0px 5px 10px rgba(247, 244, 48, 0.6)" }}
+          >
+            Resume
+          </a>
+        </div>
 
-        {/* Hamburger Menu (Mobile Only) */}
+        {/* Hamburger Menu Icon */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-black">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -88,28 +62,19 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white px-6 pb-4 pt-2 shadow-lg font-[Ubuntu]">
-          <ul className="space-y-3 text-black font-medium text-base">
-            {navItems.map((item, index) => (
+        <div className="md:hidden bg-[#0F172A] px-6 pb-4 pt-2 font-[Ubuntu] text-white shadow-lg">
+          <ul className="space-y-4 text-center">
+            {[...navItems, "Contact"].map((item, index) => (
               <li key={index}>
                 <Link
                   to={`/${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
-                  className="block hover:text-orange-500 transition duration-300"
+                  className="block hover:text-orange-500 transition duration-300 hover:scale-105"
                 >
                   {item}.
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block hover:text-orange-500 transition duration-300"
-              >
-                Contact.
-              </Link>
-            </li>
           </ul>
         </div>
       )}
