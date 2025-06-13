@@ -43,11 +43,22 @@ const Skills = () => {
   return (
     <section className="w-full min-h-screen bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white px-4 py-20 md:px-10 lg:px-20 scroll-mt-20">
       {/* Heading */}
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-2">
-        <LiaLaptopCodeSolid className="text-5xl text-purple-300 font-bold" />
-        <span className="text-white">Skills &</span>
-        <span className="text-yellow-400">Abilities</span>
-      </h2>
+      <div className="flex items-center justify-center mb-8 px-4 py-2 rounded-lg">
+        <h2 className="text-3xl sm:text-4xl font-bold flex items-center gap-2 text-center font-[ubuntu]">
+          <span>
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/arcade/64/source-code.png"
+              alt="skills-icon"
+            />
+          </span>
+          <span className="text-white">Skills &</span>
+          <span className="text-yellow-400">Abilities</span>
+        </h2>
+      </div>
+
+
 
       {/* Grid Layout */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-6">

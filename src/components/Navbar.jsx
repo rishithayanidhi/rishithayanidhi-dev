@@ -4,17 +4,17 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navItems = ["About", "Skills", "Education", "Projects", "Experience"];
+  const navItems = ["About", "Skills", "Education", "Projects"];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0F172A] shadow-2xl text-white">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0F172A] shadow-2xl text-white border-b border-white/10">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">
         {/* Left: Logo */}
         <Link
           to="/"
-          className="text-lg font-semibold tracking-wide font-[Ubuntu] hover:overline text-yellow-300 transition duration-300 hover:scale-105"
+          className="text-lg font-bold tracking-wide font-[cambria] hover:overline text-yellow-300 transition duration-300 hover:scale-105"
         >
-          RISHI
+          RISHI T
         </Link>
 
         {/* Center: Desktop Nav Links (including Contact) */}
@@ -45,8 +45,8 @@ export default function Navbar() {
             href="https://drive.google.com/file/d/1qYjngEfL8uu8TsPyC1Z31lWZx6vthHmD/view"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 bg-yellow-400 text-black text-sm font-[Ubuntu] rounded-md transition-transform duration-300 ease-out hover:scale-105 hover:shadow-lg"
-            style={{ boxShadow: "0px 5px 10px rgba(247, 244, 48, 0.6)" }}
+            className="px-5 py-2 bg-yellow-400 text-black text-sm font-[Ubuntu] rounded-md transition-transform duration-300 ease-out hover:overline hover:font-bold hover:scale-105 hover:shadow-lg"
+            style={{ boxShadow: "0px 2px 5px rgba(247, 244, 48, 0.6)" }}
           >
             Resume
           </a>
