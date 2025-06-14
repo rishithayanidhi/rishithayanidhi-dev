@@ -6,6 +6,9 @@
 @import "tailwindcss";
 
 
+
+
+
 /* Subtle shimmer glow on hover */
 .group:hover .glow-effect {
   animation: shimmer 1.5s infinite linear;
