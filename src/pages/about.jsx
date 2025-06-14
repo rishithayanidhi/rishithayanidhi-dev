@@ -1,12 +1,21 @@
-import React from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import profileImage from "../assets/author.jpg";
 
 const About = () => {
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <section className="flex flex-col items-center justify-center pt-24 pb-12 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white">
+    <section className="flex flex-col items-center justify-center pt-24 pb-12 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white overflow-x-hidden">
       {/* Title */}
-      <h2 className="text-3xl sm:text-4xl font-bold flex items-center gap-2 mb-12 font-[ubuntu] text-center">
+      <motion.h2
+        className="text-3xl sm:text-4xl font-bold flex items-center gap-2 mb-12 font-[ubuntu] text-center"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <img
           width="32"
           height="32"
@@ -14,14 +23,17 @@ const About = () => {
           alt="user"
         />
         About <span className="text-purple-300">Me</span>
-      </h2>
+      </motion.h2>
 
-      {/* Flex container for image + content block */}
+      {/* Image + Content Block */}
       <div className="flex flex-col xl:flex-row xl:items-center justify-center gap-10 max-w-6xl w-full xl:min-h-[400px]">
         {/* Profile Image */}
         <motion.div
           className="mx-auto xl:mx-0 relative rounded-xl overflow-hidden shadow-2xl shadow-red-500/50 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-[#111] cursor-pointer xl:self-center"
           whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgb(165, 42, 42)" }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
         >
           <motion.div
             className="absolute inset-0 bg-gradient-to-br from-red-400 to-transparent opacity-0"
@@ -36,7 +48,12 @@ const About = () => {
         </motion.div>
 
         {/* Text Block */}
-        <div className="flex flex-col justify-center w-full max-w-3xl text-white mt-8 xl:mt-0 xl:self-center px-2 xl:px-0">
+        <motion.div
+          className="flex flex-col justify-center w-full max-w-3xl text-white mt-8 xl:mt-0 xl:self-center px-2 xl:px-0"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <h3 className="text-2xl sm:text-3xl font-bold font-[Ubuntu] text-center xl:text-left">
             I'm Rishi T
           </h3>
@@ -66,12 +83,16 @@ const About = () => {
               <span>: +91 9884947313</span>
             </div>
           </div>
-
-        </div>
+        </motion.div>
       </div>
 
       {/* Resume Button */}
-      <div className="mt-8 flex justify-center w-full">
+      <motion.div
+        className="mt-8 flex justify-center w-full"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
         <a
           href="https://drive.google.com/file/d/1qYjngEfL8uu8TsPyC1Z31lWZx6vthHmD/view"
           target="_blank"
@@ -95,7 +116,7 @@ const About = () => {
             </span>
           </button>
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 };

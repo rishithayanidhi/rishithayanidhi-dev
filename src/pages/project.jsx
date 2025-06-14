@@ -1,10 +1,13 @@
 import React from "react";
+import { motion } from "framer-motion"; // ✅ Import motion
 import SmartDashboardImg from "../assets/Smart-Dashboard.png";
 import SkycastImg from "../assets/Sky-Cast.jpg";
 import RouteOptimizerImg from "../assets/Route-Optimizer.jpg";
 import SafesyncImg from "../assets/Safe-sync.jpg";
 import ProductManagementImg from "../assets/come.jpg";
 import EcommercedImg from "../assets/Ecommerce.jpg";
+import Footer from "../components/Footer";
+
 
 const projects = [
   {
@@ -58,8 +61,14 @@ const projects = [
 
 const Projects = () => {
   return (
+  <>  
     <section id="projects" className="mt-[90px] pb-12 px-4 md:px-8 lg:px-16">
-      <div className="text-center mb-12">
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <h2 className="text-3xl sm:text-4xl font-bold flex items-center justify-center gap-2 mb-2 font-[ubuntu]">
           <span>
             <img
@@ -75,9 +84,20 @@ const Projects = () => {
         <p className="text-gray-300 text-lg font-[cambria]">
           Explore my finest creations — crafted with passion, precision, and a spark of innovation.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+
+      {/* Animated Cards Container */}
+      <motion.div
+        className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+          delay: 0.3,
+        }}
+      >
         {projects.map((project, index) => (
           <div
             key={index}
@@ -129,8 +149,10 @@ const Projects = () => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
+    <Footer />
+  </>
   );
 };
 

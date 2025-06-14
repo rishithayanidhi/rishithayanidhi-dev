@@ -1,4 +1,6 @@
-import { LiaLaptopCodeSolid } from "react-icons/lia";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import Footer from "../components/Footer";
 import javaIcon from '../assets/icons/java.png';
 import javascriptIcon from '../assets/icons/javascript.png';
 import typescriptIcon from '../assets/icons/typescript.png';
@@ -39,11 +41,32 @@ const skills = [
   { name: 'MySQL', icon: mysqlIcon, percent: 85 },
 ];
 
+// Break the skills array into rows of N items each
+const getRows = (array, itemsPerRow) => {
+  const rows = [];
+  for (let i = 0; i < array.length; i += itemsPerRow) {
+    rows.push(array.slice(i, i + itemsPerRow));
+  }
+  return rows;
+};
+
 const Skills = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const rows = getRows(skills, 6); // Adjust to match grid-cols (6)
+
   return (
+  <> 
     <section className="w-full min-h-screen bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white px-4 py-20 md:px-10 lg:px-20 scroll-mt-20">
       {/* Heading */}
-      <div className="flex items-center justify-center mb-8 px-4 py-2 rounded-lg">
+      <motion.div
+        className="flex items-center justify-center mb-8 px-4 py-2 rounded-lg"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
         <h2 className="text-3xl sm:text-4xl font-bold flex items-center gap-2 text-center font-[ubuntu]">
           <span>
             <img
@@ -56,32 +79,46 @@ const Skills = () => {
           <span className="text-white">Skills &</span>
           <span className="text-yellow-400">Abilities</span>
         </h2>
-      </div>
+      </motion.div>
 
-
-
-      {/* Grid Layout */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-6">
-        {skills.map((skill, idx) => (
-          <div
-            key={idx}
-            className="bg-purple-800/30 border border-purple-600 hover:border-yellow-400 p-5 rounded-xl flex flex-col items-center justify-center text-center shadow-lg hover:shadow-yellow-500/30 transition-all duration-300"
+      {/* Animated Rows */}
+      <div className="flex flex-col gap-6">
+        {rows.map((row, rowIndex) => (
+          <motion.div
+            key={rowIndex}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-6"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+              delay: rowIndex * 0.3,
+            }}
           >
-            <img
-              src={skill.icon}
-              alt={skill.name}
-              className="w-12 h-12 object-contain mb-3"
-            />
-            <p className="font-semibold text-white text-sm sm:text-base mb-2">
-              {skill.name}
-            </p>
-            <div className="text-xs text-yellow-300 bg-purple-950 border border-yellow-300 px-2 py-1 rounded-full">
-              {skill.percent}%
-            </div>
-          </div>
+            {row.map((skill, index) => (
+              <div
+                key={index}
+                className="bg-purple-800/30 border border-purple-600 hover:border-yellow-400 p-5 rounded-xl flex flex-col items-center justify-center text-center shadow-lg hover:shadow-yellow-500/30 transition-all duration-300"
+              >
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className="w-12 h-12 object-contain mb-3"
+                />
+                <p className="font-semibold text-white text-sm sm:text-base mb-2">
+                  {skill.name}
+                </p>
+                <div className="text-xs text-yellow-300 bg-purple-950 border border-yellow-300 px-2 py-1 rounded-full">
+                  {skill.percent}%
+                </div>
+              </div>
+            ))}
+          </motion.div>
         ))}
       </div>
     </section>
+    <Footer />
+  </>   
   );
 };
 
