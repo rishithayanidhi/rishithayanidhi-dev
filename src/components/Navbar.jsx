@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">
         {/* Left: Logo */}
         <Link
-          to="/about"
+          to="/"
           className="text-lg font-bold tracking-wide font-[cambria] hover:overline text-yellow-300 transition duration-300 hover:scale-105"
         >
           RISHI T
