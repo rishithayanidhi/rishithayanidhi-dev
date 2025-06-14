@@ -12,7 +12,7 @@ export default function Navbar() {
         {/* Left: Logo */}
         <Link
           to="/"
-          className="text-lg font-bold tracking-wide font-[cambria] hover:overline text-yellow-300 transition duration-300 hover:scale-105"
+          className="text-lg tracking-wide font-bold font-[Cambria] hover:overline text-yellow-300 transition duration-300 hover:scale-105"
         >
           RISHI T
         </Link>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import profileImage from "../assets/author.jpg";
+import Footer from "../components/Footer";
 
 const About = () => {
   // Scroll to top on mount
@@ -8,6 +9,7 @@ const About = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
+  <> 
     <section className="flex flex-col items-center justify-center pt-24 pb-12 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white overflow-x-hidden">
       {/* Title */}
       <motion.h2
@@ -118,6 +120,8 @@ const About = () => {
         </a>
       </motion.div>
     </section>
+    <Footer />
+  </>   
   );
 };
 
