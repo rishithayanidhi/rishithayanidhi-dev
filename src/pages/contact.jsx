@@ -109,7 +109,7 @@ export default function Contact() {
                   />
                 </svg>
               </button>
-              {/* <input type="hidden" name="_next" value="https://personal-portfolio-official1.onrender.com/about" /> */} 
+              <input type="hidden" name="_next" value="https://rishithayanidhi-portfolio.vercel.app/" /> 
             </form>
           </motion.div>
 
