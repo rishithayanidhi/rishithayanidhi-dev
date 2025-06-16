@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import profileImage from "../assets/author1.jpg"; // Replace with your actual image path
+import profileImage from "../assets/author1.png"; // Replace with your actual image path
 
 const HomePage = () => {
   return (
