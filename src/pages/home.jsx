@@ -91,8 +91,7 @@ const HomePage = () => {
               transition={{ delay: 1.5, duration: 1 }}
               className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 font-medium"
             >
-              I'm a web developer with extensive experience for over 3 years.
-              My expertise is to create website design, frontend design, and many more...
+              I’m a passionate and curious developer who loves tackling new challenges and crafting meaningful digital experiences. Always eager to explore emerging ideas, I thrive on problem-solving and continuously learning — pushing myself to grow and adapt.
             </motion.p>
 
             {/* Social links */}
