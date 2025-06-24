@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import profileImage from "../assets/author.jpg";
 
 const HomePage = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -51,7 +52,7 @@ const HomePage = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full animate-pulse"></div>
               <div className="relative rounded-full overflow-hidden w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 m-1 bg-slate-900 animate-float">
                 <img
-                  src="src/assets/author.jpg"
+                  src={profileImage}
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
