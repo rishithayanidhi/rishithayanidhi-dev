@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; // ✅ Import motion
+import { motion } from "framer-motion";
 import SmartDashboardImg from "../assets/Smart-Dashboard.png";
 import SkycastImg from "../assets/Sky-Cast.jpg";
 import RouteOptimizerImg from "../assets/Route-Optimizer.jpg";
@@ -118,7 +118,7 @@ const Projects = () => {
             </div>
 
             {/* Content */}
-            <div className="p-6 flex flex-col justify-between flex-grow bg-[#1e293b]">
+            <div className="p-6 flex flex-col justify-between grow bg-[#1e293b]">
               <div>
                 <h3 className="font-[ubuntu] text-xl font-semibold text-cyan-400 mb-3">
                   {project.title}

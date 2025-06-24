@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import profileImage from "../assets/author.jpg";
+import profileImage from "../assets/author1.jpg";
 import Footer from "../components/Footer";
 
 const About = () => {
@@ -10,7 +10,7 @@ const About = () => {
   }, []);
   return (
   <> 
-    <section className="flex flex-col items-center justify-center pt-24 pb-12 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white overflow-x-hidden">
+    <section className="flex flex-col items-center justify-center pt-24 pb-12 px-4 sm:px-6 md:px-8 bg-linear-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white overflow-x-hidden">
       {/* Title */}
       <motion.h2
         className="text-3xl sm:text-4xl font-bold flex items-center gap-2 mb-12 font-[ubuntu] text-center"
@@ -31,14 +31,14 @@ const About = () => {
       <div className="flex flex-col xl:flex-row xl:items-center justify-center gap-10 max-w-6xl w-full xl:min-h-[400px]">
         {/* Profile Image */}
         <motion.div
-          className="mx-auto xl:mx-0 relative rounded-xl overflow-hidden shadow-2xl shadow-red-500/50 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-[#111] cursor-pointer xl:self-center"
-          whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgb(165, 42, 42)" }}
+          className="mx-auto xl:mx-0 relative rounded-xl overflow-hidden shadow-2xl shadow-yellow-500/50 w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-[#222200] cursor-pointer xl:self-center"
+          whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgb(165, 161, 42)" }}
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-red-400 to-transparent opacity-0"
+            className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-transparent opacity-0"
             whileHover={{ opacity: 1, y: "100%" }}
             transition={{ duration: 0.5 }}
           />

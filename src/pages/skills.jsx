@@ -59,7 +59,7 @@ const Skills = () => {
 
   return (
   <> 
-    <section className="w-full min-h-screen bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white px-4 py-20 md:px-10 lg:px-20 scroll-mt-20">
+    <section className="w-full min-h-screen bg-linear-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white px-4 py-20 md:px-10 lg:px-20 scroll-mt-20">
       {/* Heading */}
       <motion.div
         className="flex items-center justify-center mb-8 px-4 py-2 rounded-lg"
