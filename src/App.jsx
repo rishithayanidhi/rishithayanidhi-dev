@@ -12,7 +12,6 @@ import "./App.css"; // Import your CSS file
 function App() {
   return (
     <div className="bg-[#0f172a] min-h-screen w-full flex flex-col items-center justify-center overflow-x-hidden overflow-y-hidden">
-      <Analytics />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
