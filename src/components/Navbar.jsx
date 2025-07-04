@@ -82,7 +82,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="block hover:text-yellow-300 transition-colors duration-200"
                 >
-                  {item}.
+                  {item}
                 </Link>
               </li>
             ))}
