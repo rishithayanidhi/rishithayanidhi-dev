@@ -31,7 +31,7 @@ export default function Navbar() {
                 to={`/${item.toLowerCase()}`}
                 className="hover:overline hover:text-yellow-300 transition-transform duration-300 hover:scale-105"
               >
-                {item}.
+                {item}
               </Link>
             </li>
           ))}
@@ -40,7 +40,7 @@ export default function Navbar() {
               to="/contact"
               className="hover:overline hover:text-yellow-300 transition-transform duration-300 hover:scale-105"
             >
-              Contact.
+              Contact
             </Link>
           </li>
         </ul>
