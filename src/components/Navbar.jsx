@@ -48,7 +48,7 @@ export default function Navbar() {
         {/* Resume Button (Desktop) */}
         <div className="hidden md:block">
           <a
-            href="https://drive.google.com/file/d/1fhU7hPSJufLy0_O204I7_IeZI7DL6g8-/view"
+            href="https://drive.google.com/file/d/1DmDAsXaY4HUnwZYqgqk6_Wzp-7rFW6RZ/view"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 bg-yellow-400 text-black text-sm rounded-md shadow-md hover:shadow-yellow-400/50 transition-transform duration-300 hover:scale-105"
