@@ -96,7 +96,7 @@ const About = () => {
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <a
-          href="https://drive.google.com/file/d/1-1cjgGQ7GU6tdnK64zRTGo8J0WdKaTgJ/view"
+          href="https://drive.google.com/file/d/1fhU7hPSJufLy0_O204I7_IeZI7DL6g8-/view"
           target="_blank"
           rel="noopener noreferrer"
         >
