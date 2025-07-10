@@ -8,7 +8,7 @@ const HomePage = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const roles = ["Frontend Developer", "Backend Developer"];
+  const roles = ["UI Developer", "Backend Developer"];
 
   useEffect(() => {
     const typeSpeed = isDeleting ? 50 : 100;
