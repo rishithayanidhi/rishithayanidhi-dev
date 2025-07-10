@@ -63,7 +63,7 @@ const About = () => {
             Student | FullStack Developer
           </p>
           <p className="text-sm sm:text-base font-medium font-[Ubuntu] text-gray-300 mb-6 text-justify">
-            I'm Rishi, a passionate frontend and backend developer and a second-year student at Sri Sairam Engineering College. I am dedicated to continuous learning, pushing my limits, and creating seamless digital experiences. With a strong interest in web development, I focus on building intuitive and efficient solutions while actively participating in social initiatives that drive positive change.
+            I'm Rishi, a passionate frontend and backend developer and a Third-year student at Sri Sairam Engineering College. I am dedicated to continuous learning, pushing my limits, and creating seamless digital experiences. With a strong interest in web development, I focus on building intuitive and efficient solutions while actively participating in social initiatives that drive positive change.
           </p>
 
           {/* Info Block */}
